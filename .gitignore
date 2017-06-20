@@ -1,0 +1,32 @@
+# Temporary files
+*~
+\#*#
+
+# hprof captures
+captures/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file
+local.properties
+
+# IntelliJ
+*.iml
+.idea/
+
+# NodeJS Dependency directories
+node_modules/
+
+# Service account private key
+service-account.json
+
+# Google Assistant credentials
+credentials.json
+
+# OSX files
+.DS_Store
+
+# Windows files
+Thumbs.db

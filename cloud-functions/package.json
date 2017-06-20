@@ -1,0 +1,16 @@
+{
+  "name": "assistant-androidthings-api-ai-webhook",
+  "description": "api.ai webhook",
+  "version": "0.0.1",
+  "main": "index.js",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Nilhcem/assistant-androidthings.git"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.13.0",
+    "basic-auth": "1.1.0"
+  }
+}

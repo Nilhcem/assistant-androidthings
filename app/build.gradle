@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    defaultConfig {
+        applicationId 'com.nilhcem.assistant.androidthings'
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.sdk_version
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+ext.dagger_version = '2.11'
+ext.support_version = '26.0.0-beta2'
+
+dependencies {
+    compile project(':events-pubsub')
+    compile project(':google-assistant')
+
+    provided 'com.google.android.things:androidthings:0.4.1-devpreview'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    compile "com.android.support:appcompat-v7:$support_version"
+
+    provided "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    compile "com.google.dagger:dagger-android:$dagger_version"
+    compile "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    compile "android.arch.lifecycle:runtime:$rootProject.ext.arch_version"
+    compile "android.arch.lifecycle:extensions:$rootProject.ext.arch_version"
+    kapt "android.arch.lifecycle:compiler:$rootProject.ext.arch_version"
+
+    compile 'com.google.android.things.contrib:driver-button:0.3'
+    compile 'com.google.android.things.contrib:driver-pwmservo:0.2'
+}

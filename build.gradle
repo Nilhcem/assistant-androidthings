@@ -1,0 +1,36 @@
+buildscript {
+    ext.kotlin_version = '1.1.2-5'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    sdk_version = 26
+    min_sdk_version = 24
+    build_tools_version = '26.0.0'
+
+    arch_version = '1.0.0-alpha3'
+    grpc_version = '1.4.0'
+    protoc_version = '3.3.0'
+    protoc_gen_javalite_version = '3.0.0'
+    protoc_gen_grpc_java_version = '1.4.0'
+    google_auth_library_oauth2_http_version = '0.7.0'
+    javax_annotation_version = '1.3'
+}
