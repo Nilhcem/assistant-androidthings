@@ -58,7 +58,7 @@ function handleGiveIntent(req, res) {
                 "Don't worry about releasing wakelocks, they are cleared automatically when the battery dies and the phone is restarted.",
                 "Write huge methods instead of many small methods to avoid 65k method limit",
                 "Do NOT separate your logic and UI, because it's easier when everything is in one place, plus more classes equals slower code"
-            ]
+            ];
             sendResponse(advice[getRandomIntInclusive(0, advice.length - 1)], res);
             break;
         case 'help':
@@ -119,7 +119,7 @@ function sendResponse(message, res) {
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min +1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function publishMessage(topicName, message, callback) {
