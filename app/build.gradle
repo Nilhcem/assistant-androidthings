@@ -50,4 +50,5 @@ dependencies {
 
     compile 'com.google.android.things.contrib:driver-button:0.3'
     compile 'com.google.android.things.contrib:driver-pwmservo:0.2'
+    compile 'com.nilhcem.androidthings:driver-max72xx:0.0.1'
 }
